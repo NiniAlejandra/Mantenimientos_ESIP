@@ -20,7 +20,7 @@ server = app.server
 
 # Define the layout
 app.layout = html.Div([
-    html.H1("ESIP - Registro de Acciones Abril 2025", style={'textAlign': 'center'}),
+    html.H1("ESIP - Registro de Acciones Abril 2024", style={'textAlign': 'center'}),
     
     # Filter dropdown
     html.Div([
@@ -52,7 +52,7 @@ def update_map(selected_tipo):
     filtered_df = df if selected_tipo is None else df[df['Tipo'] == selected_tipo]
     
     # Create the map
-    fig = px.scatter_map(
+    fig = px.scatter_mapbox(
         filtered_df,
         lat='LATITUD',
         lon='LONGITUD',
@@ -68,8 +68,8 @@ def update_map(selected_tipo):
             'LONGITUD': False
         },
         zoom=12,
-        map_style="carto-positron",
-        size=[0.6] * len(filtered_df)  
+        mapbox_style="carto-positron",
+        size=[0.6] * len(filtered_df)
     )
     
     # Update layout with mapbox configuration
