@@ -5,7 +5,7 @@ import plotly.express as px
 import pandas as pd
 
 # Read the CSV file
-df = pd.read_csv('MMTO_ACUMULADO_ABRIL.CSV')
+df = pd.read_csv('MMTO_ACUMULADO_ABRIL.csv')
 
 # Convert LATITUD and LONGITUD to numeric, replacing any errors with NaN
 df['LATITUD'] = pd.to_numeric(df['LATITUD'], errors='coerce')
